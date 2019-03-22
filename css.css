@@ -8,9 +8,9 @@
     header {
         display: flex;
         flex-direction: column;
-        height: 90vh;
-        background-color: rgba(157, 11, 143, 1);
-        box-shadow: -3px 4px 5px 3px rgba(157, 11, 143, 0.4);
+        height: 60vh;
+        background-color: rgba(49, 47, 47);
+        box-shadow: -3px 4px 5px 3px rgba(49, 47, 47, 0.4);
         align-items: center;
         justify-content: center;
         margin-bottom: 3%;
@@ -60,13 +60,7 @@
     h1 {
         text-align: center;
     }
-    /*
-    aqui já tava sendo feito certo.
-    display pra criar o container
-    alinhamento central desnecessário, mas debas (talvez seja, eu q nao vi)
-    o justify content fazendo o que vc queria que fizesse
-    e o flex-wrap pra quebrar as linhas
-    */
+   
     .portfolio {
         display: flex;
         align-items: center;
@@ -74,20 +68,7 @@
         flex-wrap: wrap;
         
     }
-    /*
-        aqui, no picture, a gente tava fazendo certo
-        o flex 1 pra definir que todos vão ter o mesmo tamanho
-        tirei o flex-grow pq tanto faz
-        coloquei o flex-basis pra dizr que pro flex, seu elemento vai ter 30% do flex
-        aí onde tá o TRICK DO TRICK. só o flex-basis nao restringe o fela da puta.
-        por isso coloquei o max-width com om esmo tamanho do flex-basis
-        porque aí eu garanto q meu width do bagulho vai ter no máximo o tamanho do meu width base
-       
-        Por que não restringe? conseguiu descobrir ou fodas-e?
-
-        EU ACHO que tem que colocar porque o flex-basis diz o tamanho MINIMO, mas não restringe o máximo.
-        já o flex-grow, que poderia cobrir isso, só aceita a mesma notação do flex (um numerozinho sem percentual) só!
-     */
+    
     .portfolio picture {
         flex: 1;
         flex-basis: 30%;
@@ -140,8 +121,11 @@
         font-family: 'Courier New', Courier, monospace;
         line-height: 20px;
     }
+    .email h1 {
+        padding: 4px;
+    }
     .botao {
-        background-color: rgba(157, 11, 143, 1);
+        background-color: rgba(49, 47, 47, 0.4);
         border: none;
         color: white;
         padding: 15px 32px;
@@ -154,8 +138,8 @@
     }
     footer {
         height: 210px;
-        background-color: rgba(157, 11, 143, 1);
-        box-shadow: 3px -4px 5px 3px rgba(157, 11, 143, 0.4);
+        background-color: rgba(49, 47, 47);
+        box-shadow: 3px -4px 5px 3px rgba(49, 47, 47, 0.4);
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -182,8 +166,10 @@
         flex-direction: column;
         color: white;
         line-height: 26px;
-        box-shadow: -3px 4px 5px 3px rgba(157, 11, 143, 0.4);
+        box-shadow: -3px 4px 5px 3px rgba(49, 47, 47, 0.4);
         margin-left: 1%;
+        align-items: center;
+        justify-content: center;
     }
     .blog h3 {
         margin-bottom: 0px;
@@ -192,69 +178,8 @@
         text-decoration: none;
         color: white;
     }
-
-
-
-
-
-
-
-    /* to fazendo um teste */
-    /*
-        tá, pera q vou te explicar
-
-        esse é meu flex container, ok?
-        __________
-        |         |
-        |         |
-        |_________|
-
-        quando eu coloco itens ali dentro, ele fazem isso aqui, ó:
-
-
-        essas caixas toscas sao os flex items... eles tão colocados ali dentro somente, nesse caso,
-        eles não tem a propriedade flex setada, logo ocupam só o tamanho que eles mesmos necessitam.
-        a propriedade flex, vai funcioanr como uma fração de um total
-
-        acho que sim!
-        e se eu tiver 7 elementso?
-        e nesse flex: 1 eu clocaria flex: 7? ou nada a ve?
-        se eu tenho dois elementos eu tenho x/2 (entendeu até aqui?)
-        então, quando eu digo: flex: 1
-        eu falo: eu quero que vc, meu elemento fofinho, ocupe 1/2 do total
-
-        daí ao invés de x/2, vai ser x/7, seu container vai ser dividido em uma fração de 7 elementos
-        daí depende, no flex: X vc define QUANTO da fraçao vc quer q seu elemento ocupe
-        considerando também que essa fração pode crescer, tá? tipo
-        mas o que é essa ocupação? tipo, o tamanho dele na tela? o quanto de espaço ele vai ocupar? o que é isso
-        por exemplo, eu coloquei flex: row
-        ele vai crescer em linha. Eu tenho 10 elemetnos e eu quero que apareça 2 por linha.
-        eu vou fazer 2
-        digamos que vc queira que tres elementos ocupem 2/7, supostamente já teria 6/7 ocupados
-        o tamanho dele na tela
-         flex-direction: row
-flex-direction é diferente de flex
-eu sei amg, foi só pra facilitar hueaueahue.  nao tneho como saber se tu sabe, po ahahahha
-mas voce entendeu o que eu quis dizer? tipo, ele vai crescer em linha mas quero limitar 2 por linha. então cada elemento
-tem que ocupar metade do container?
-        
-        aí é onde entra o flex-basis, pq vc vai dizer o tamanho mínimo do flex
-        vc vai dizer que quer seus 10 elementos ali na tela, de dois em dois, mas cada um ocupando 50%;
-        então vc vai dizer:
-        use flex: 1 para todos vcs terem o mesmo tamanho.
-        use flex-grow: 1 para todos vocês não crescerem irregulares e se manterem no mesmo tamanho  
-        Por exemplo, eu diminuo o tamanho da tela ou realmente cresce mais um elemento ali?                              
-        use flex-basis: 50% pois quero que o seu tamanho BASE seja 50% do container
-        ó, vou ser sincero, como usa exatamente o flex-grow eu não to ligado ahahahah eu não consegui usar ativamente
-        ele até hoje, mas já usei flex basis
-
-        tua linha tá mto grande, fica foda ler- deixa esse texto aqui por enquanto, relê ele se necessário
-        beleza, vamos ver aqui.
-        __________
-        | | | | | |
-        | |_| |_| |
-        |_________|
-    Nesse caso eles estão space between, tá certinho o espaço ali
-    isso
-
-    */
+    .socialMediaPictures {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
