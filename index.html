@@ -58,10 +58,12 @@
               method="POST">
                 <div class="email">
                   <h1>Me manda um email, vamos conversar!</h1>
-                  Seu nome: <input type="text" name="name" placeholder="Your name"><br>
+                  Seu nome: <input type="text" name="name" placeholder="contratante"><br>
                   Seu email: <input type="text" name="_replyto" class="userEmail" placeholder="mecontrata@suaempresa.com.br"><br>
-                  Assunto: <input type="text" class="assunto" placeholder="quero você na minha empresa!"><br>
-                  E-mail: <textarea cols="50" rows="4" placeholder="Digite aqui seu email" class="mensagem"></textarea>
+                  E-mail: <textarea name="message" cols="50" rows="4" placeholder="Venha trabalhar conosco." class="mensagem"></textarea>
+                  <input type="hidden" name="_after" value="https://theusanchez.dev/">
+                  <input type="hidden" name="_honeypot" value="">
+                  <input type="hidden" name="_confirmation" value="Obrigado por ter entrado em contado. Assim que possivel te retorno.">
                 </div>
                 <input type="submit" value="Enviar" class="botao"> 
               </form>
